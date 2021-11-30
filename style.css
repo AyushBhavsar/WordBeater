@@ -1,0 +1,21 @@
+body{
+    
+    color: white;
+    margin: -24px;
+    margin-left: 1px;
+    padding: 0px;
+    background: url('bg6.jpg') ;
+    background-size: 100%;
+}
+.left {
+    display: inline-block;
+    /* border: 2px solid red; */
+    position: absolute;
+    left: 60px;
+    top: 20px;
+}
+
+ img {
+    width:1px;
+    /* filter: invert(100%); */
+}
