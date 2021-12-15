@@ -8,34 +8,46 @@
   <title>WordChamp</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <style>
-      body{
-  
-  color: white;
-  margin: -24px;
-  margin-left: 1px;
-  padding: 0px;
-  background: url('bg6.jpg') ;
-  background-size: 100%;
-}
-.left {
-  display: inline-block;
-  /* border: 2px solid red; */
-  position: absolute;
-  left: 60px;
-  top: 20px;
-}
 
-img {
-  width:1px;
-  /* filter: invert(100%); */
-}
+  <style>
+    body {
+
+      color: white;
+      margin: -24px;
+      margin-left: 1px;
+      padding: 0px;
+      background: url('bg6.jpg');
+      background-size: 100%;
+      overflow: hidden;
+
+    }
+
+    .left {
+      display: inline-block;
+      /* border: 2px solid red; */
+      position: absolute;
+      left: 60px;
+      top: 20px;
+    }
+
+    img {
+      width: 1px;
+      /* filter: invert(100%); */
+    }
+
+    #footer {
+      position: fixed;
+      padding: 10px 10px 0px 10px;
+      bottom: 0;
+      width: 100%;
+      height: 40px;
+      background: grey;
+    }
   </style>
-  </head>
+</head>
 
 <body class=" text-dark ">
-  <img src="bg7.jpg" alt=""> 
+  <img src="bg7.jpg" alt="">
   <header class="bg-warning text-center p-3 mb-5">
     <nav class="navbar navbar-dark">
       <ul class="nav nav-pills font-weight-bold ">
@@ -43,7 +55,7 @@ img {
           <a class="nav-link  text-white" href="index.html">Home</a>
         </li>
         <li class="nav-item text-white">
-          <a class="nav-link active bg-dark text-white" href="index2.html">Test</a>
+          <a class="nav-link active bg-dark text-white" href="test.html">Test</a>
         </li>
         <li class="nav-item">
           <a class="nav-link  text-white" href="blog.html">Blog</a>
@@ -52,7 +64,7 @@ img {
           <a class="nav-link  text-white" href="aboutus.html">About Us</a>
         </li>
       </ul>
-        <h2>WordChamp</h2>
+      <h2>WordChamp</h2>
     </nav>
   </header>
   <div class="container text-center">
@@ -86,7 +98,9 @@ img {
             </h3>
           </div>
         </div><br>
-        <a class="btn btn-outline-warning text-dark font-weight-bold " href="index.html">End Test</a>
+        <button class="btn btn-outline-warning text-dark font-weight-bold "  onclick="endtest()">
+          End Test
+        </button>
         <!-- Instructions -->
         <div class="row mt-5">
           <div class="col-md-12">
@@ -102,10 +116,16 @@ img {
     </div>
   </div>
 
+  <footer class="py-3 bg-dark" id="footer">
+    <div class="container footer-copyright text-center  py-0 text-white">© 2021 Copyright :
+      <a class="dark-grey-text text-white" href="aboutus.html"> Group No-12 IF5I</a>
+    </div>
+  </footer>
+
   <script src="js/main2.js"></script>
 
 
-  
+
 </body>
 
 </html>

@@ -39,32 +39,53 @@ const highscoreDisplay = document.querySelector('#highscore');
 
 
 const words = [
-  'hat',
-  'river',
-  'lucky',
-  'statue',
-  'generate',
-  'stubborn',
-  'cocktail',
-  'runaway',
-  'joke',
-  'developer',
-  'establishment',
-  'hero',
+  'abstraction',
   'javascript',
-  'nutrition',
-  'revolver',
+  'developer',
   'echo',
-  'siblings',
-  'investigate',
-  'horrendous',
-  'symptom',
-  'laughter',
-  'magic',
-  'master',
-  'space',
-  'definition'
+  'software',
+  'algorithm',
+  'agile',
+  'angular',
+  'argument',
+  'operators',
+  'asynchronous',
+  'augmented',
+  'binary',
+  'bootstrap',
+  'command',
+  'interface',
+  'cookies',
+  'database',
+  'compiler',
+  'interpreter',
+  'statement',
+  'constants',
+  'cybersecurity',
+  'debugging',
+  'declaration',
+  'exception',
+  'framework',
+  'github',
+  'inheritance',
+  'iteration',
+  'linux',
+  'markup',
+  'mysql',
+  'operating',
+  'package',
+  'packet',
+  'parameter',
+  'pattern',
+  'runtime',
+  'scripting',
+  'server',
+  'terminal',
+  'version',
+  'website',
+  'whiteboarding'
 ];
+
 // Initialize Game
 function init() {
   // Show number of seconds in UI
@@ -80,8 +101,26 @@ function init() {
 }
 
 
+// Highscore based on score value for Session Storage
+if (typeof sessionStorage['highscore'] === 'undefined' || score > sessionStorage['highscore']) {
+
+  sessionStorage['highscore'] = score;
+  // alert(document.cookie);
+} else {
+  sessionStorage['highscore'] = sessionStorage['highscore'];
+  document.cookie = "highscore=" + score;
+
+}
+// Prevent display of High Score: -1
+if (sessionStorage['highscore'] >= 0) {
+  highscoreDisplay.innerHTML = sessionStorage['highscore'];
+}
+
+
 // Start match
 function startMatch() {
+  var highcookie = document.cookie;
+
   if (matchWords()) {
     isPlaying = true;
     time = currentLevel + 1;
@@ -92,9 +131,13 @@ function startMatch() {
 
   // Highscore based on score value for Session Storage
   if (typeof sessionStorage['highscore'] === 'undefined' || score > sessionStorage['highscore']) {
+
     sessionStorage['highscore'] = score;
+    // alert(document.cookie);
   } else {
     sessionStorage['highscore'] = sessionStorage['highscore'];
+    document.cookie = "highscore=" + score;
+
   }
 
   // Prevent display of High Score: -1
@@ -149,4 +192,14 @@ function checkStatus() {
     message.innerHTML = 'Game Over!!!';
     score = -1;
   }
+}
+
+function endtest() {
+  let text;
+  if (confirm("Do you want to Quit ?") == true) {
+    window.location.href = "index.html";
+    } else {
+    txt = "You canceled!";
+  }
+  
 }
